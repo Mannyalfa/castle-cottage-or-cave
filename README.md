@@ -30,9 +30,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Image
-![screenshot]()
-
-
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
 
 ## Languages/Applications
 
