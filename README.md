@@ -3,10 +3,6 @@
 ## Table of Contents
   [Description](#description)
  
-  [Installation](#installation)
- 
-  [Usage](#usage)
- 
   [License](#license)
  
   [Image](#Image)
@@ -20,10 +16,6 @@
   [Credits](#credits)
 
 ## Description
-
-## Installation
-
-## Usage
 
 ## License
 
@@ -50,5 +42,3 @@ https://github.com/Mannyalfa/castle-cottage-or-cave
 
 ## Credits
 This application was designed and developed by Jenn Menjivar, Chris Koberstine and Manny Alfaro
-
-
