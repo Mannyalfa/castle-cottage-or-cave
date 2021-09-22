@@ -6,7 +6,6 @@ import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_BOOK } from "../utils/mutations";
 import { FaSearch } from 'react-icons/fa';
-import bookworm from "../../src/images/worm.jpg"
 
 const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
@@ -70,25 +69,24 @@ const SearchBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-info">
+      <Jumbotron fluid className="text-light bg-transparent">
         <Container>
         <div>
-            <img src={bookworm} alt="bookworm" />
           </div>
-          <h1>Worlds to explore: <i>let's go find your books!</i></h1>
+          
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
-              <Col xs={12} md={7}>
+              <Col xs={12} md={6}>
                 <Form.Control
                   name="searchInput"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search by title, author or subject"
+                  placeholder="--Search Parameter Input--"
                 />
               </Col>
-              <Col xs={12} md={4}>
+              <Col xs={12} md={2}>
                 <Button type="submit" variant="dark" size="lg">
                   <FaSearch/>
                 </Button>
@@ -102,7 +100,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : "Search for a book to begin"}
+            : "Lets search for you next home"}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { RiHomeHeartFill } from "react-icons/ri";
+import houseblue from "../../src/images/houseblue.png"
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-import google from "../../src/images/google.jpg"
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
@@ -12,22 +13,22 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='info' variant='dark' expand='lg'>
+      <Navbar bg='transparent' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-              <img src="https://fontmeme.com/permalink/210912/7d0fc50c18996c6035f8ace8c3b95e73.png" alt="bookworm" border="0"></img>
-              <img src={google} alt="powered by google" />
+            <img src={houseblue} alt="little house" />
+            <img src="https://fontmeme.com/permalink/210920/3cbfcd00bcdfdae927dbb737ff87068f.png" alt="castle cottage or cave" border={'0'} alt="castle cottage or cave" border="0"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
-                Search For Books
+                Search For Homes
               </Nav.Link>
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
-                  Saved Books
+                    Saved Homes
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
@@ -43,7 +44,7 @@ const AppNavbar = () => {
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
-``        <Tab.Container defaultActiveKey='login'>
+        ``        <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>

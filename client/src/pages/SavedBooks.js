@@ -6,7 +6,6 @@ import { REMOVE_BOOK } from "../utils/mutations";
 import { getMe, deleteBook } from "../utils/API";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
-import bookworm from "../../src/images/worm.jpg"
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
@@ -36,21 +35,20 @@ const SavedBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-info">
+      <Jumbotron fluid className="text-light bg-transparent">
         <Container>
         <div id="worm">
-            <img src={bookworm} alt="bookworm" />
           </div>
-          <h1>Your saved book collection</h1>
+          <h1>Your saved listings</h1>
         </Container>
       </Jumbotron>
       <Container>
-        <h2>
+      <h2>
           {userData.savedBooks.length
             ? `You have ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? "book" : "books"
+                userData.savedBooks.length === 1 ? "home" : "homes"
               }:`
-            : "You have no saved books"}
+            : "You have no saved homes"}
         </h2>
         <CardColumns>
           {userData.savedBooks.map((book) => {
