@@ -16,7 +16,7 @@ const AppNavbar = () => {
         <Container fluid>
           <Nav.Link as={Link} to="/">
             <img src={houseblue} alt="little house" />
-            <img src="https://fontmeme.com/permalink/210920/3cbfcd00bcdfdae927dbb737ff87068f.png" alt="castle cottage or cave" border={'0'} alt="castle cottage or cave" border="0"></img>
+            <img src="https://fontmeme.com/permalink/210920/3cbfcd00bcdfdae927dbb737ff87068f.png" alt="castle cottage or cave" id="ccc" border={'0'}></img>
           </Nav.Link>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
