@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import { RiHomeHeartFill } from "react-icons/ri";
 import houseblue from "../../src/images/houseblue.png"
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
@@ -15,14 +14,14 @@ const AppNavbar = () => {
     <>
       <Navbar bg='transparent' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
+          <Nav.Link as={Link} to="/home">
             <img src={houseblue} alt="little house" />
             <img src="https://fontmeme.com/permalink/210920/3cbfcd00bcdfdae927dbb737ff87068f.png" alt="castle cottage or cave" border={'0'} alt="castle cottage or cave" border="0"></img>
-          </Navbar.Brand>
+          </Nav.Link>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/'>
+              <Nav.Link as={Link} to='/search'>
                 Search For Homes
               </Nav.Link>
               {Auth.loggedIn() ? (
