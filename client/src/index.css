@@ -35,7 +35,7 @@ h2 {
   margin-left: 12%;
 }
 
-/* media queires for desktop screens and smaller */
+/* media queries for desktop screens and smaller */
 @media screen and (max-width: 980px) {
   #tagline {
     margin: 35% 6% 10% 6%;
@@ -45,6 +45,15 @@ h2 {
     width: 90%;
     align-items: center;
   }
+
+  #ccc {
+    width: 75%;
+    align-items: left;
+  }
+
+
+
+
 }
 
 /* media query for tablets and smaller */
