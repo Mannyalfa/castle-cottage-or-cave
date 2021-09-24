@@ -26,6 +26,10 @@ h6 {
   margin-bottom: 0rem !important;
 }
 
+.searchBarElement {
+  padding: 0;
+}
+
 h2 {
   color: white !important;
 }
@@ -50,10 +54,6 @@ h2 {
     width: 75%;
     align-items: left;
   }
-
-
-
-
 }
 
 /* media query for tablets and smaller */

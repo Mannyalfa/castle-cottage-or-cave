@@ -88,9 +88,9 @@ const SearchBooks = () => {
         <Container>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
-              <Col xs={12} md={6}>
+              <Col xs={12} md={6} className="searchBar">
                 <Row>
-                  <Col xs={12} md={4}>
+                  <Col xs={12} md={7} className="searchBarElement">
                     <Form.Control
                       name="city"
                       value={city}
@@ -100,7 +100,7 @@ const SearchBooks = () => {
                       placeholder="City"
                     />
                   </Col>
-                  <Col xs={12} md={4}>
+                  <Col xs={12} md={3} className="searchBarElement">
                     <Form.Control
                       name="stateId"
                       value={stateId}
@@ -110,12 +110,12 @@ const SearchBooks = () => {
                       placeholder="State"
                     />
                   </Col>
+                  <Col xs={12} md={2} className="searchBarElement">
+                    <Button type="submit" variant="dark" size="lg">
+                      <FaSearch />
+                    </Button>
+                  </Col>
                 </Row>
-              </Col>
-              <Col>
-                <Button type="submit" variant="dark" size="lg">
-                  <FaSearch />
-                </Button>
               </Col>
             </Form.Row>
           </Form>
