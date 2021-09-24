@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from "react-bootstrap";
+import {
+  Jumbotron,
+  Container,
+  Col,
+  Form,
+  Button,
+  Card,
+  CardColumns,
+  Row,
+} from "react-bootstrap";
 import Auth from "../utils/auth";
 import { saveBook, searchRentals } from "../utils/API";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_BOOK } from "../utils/mutations";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 
 const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
@@ -30,9 +39,12 @@ const SearchBooks = () => {
       if (!response.ok) {
         throw new Error("something went wrong!");
       }
-      const data = await response.json()
-      console.log(data.data.results[0].description, data.data.results[0].location)
- 
+      const data = await response.json();
+      console.log(
+        data.data.results[0].description,
+        data.data.results[0].location
+      );
+
       const { items } = await response.json();
       const bookData = items.map((book) => ({
         bookId: book.id,
@@ -49,7 +61,6 @@ const SearchBooks = () => {
       console.error(err);
     }
   };
-
 
   const handleSaveBook = async (bookId) => {
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
@@ -75,32 +86,35 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-transparent">
         <Container>
-        <div>
-          </div>
-          
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={6}>
-                <Form.Control
-                  name="city"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  type="text"
-                  size="lg"
-                  placeholder="--Search Parameter Input--"
-                />
-                <Form.Control
-                  name="stateId"
-                  value={stateId}
-                  onChange={(e) => setStateId(e.target.value)}
-                  type="text"
-                  size="lg"
-                  placeholder="--Search Parameter Input--"
-                />
+                <Row>
+                  <Col xs={12} md={4}>
+                    <Form.Control
+                      name="city"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      type="text"
+                      size="lg"
+                      placeholder="City"
+                    />
+                  </Col>
+                  <Col xs={12} md={4}>
+                    <Form.Control
+                      name="stateId"
+                      value={stateId}
+                      onChange={(e) => setStateId(e.target.value)}
+                      type="text"
+                      size="lg"
+                      placeholder="State"
+                    />
+                  </Col>
+                </Row>
               </Col>
-              <Col xs={12} md={2}>
+              <Col>
                 <Button type="submit" variant="dark" size="lg">
-                  <FaSearch/>
+                  <FaSearch />
                 </Button>
               </Col>
             </Form.Row>
