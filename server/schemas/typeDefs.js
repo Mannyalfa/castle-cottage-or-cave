@@ -23,22 +23,27 @@ const typeDefs = gql`
   }
 
   input saveHomeInput {
-    description: String
-    title: String
-    homeId: String
-    image: String
-    link: String
-    authors: [String]
+    address: String
+    photo: String
+    bed: Int
+    bed_max: Int
+    bed_min: Int
+    bath_max: Int
+    bath_min: Int
+    rent_max: Int
+    rent_min: Int
   }
 
   type Home {
-    _id: ID
-    authors: [String]
-    description: String
-    title: String
-    homeId: String
-    image: String
-    link: String
+    address: String
+    photo: String
+    bed: Int
+    bed_max: Int
+    bed_min: Int
+    bath_max: Int
+    bath_min: Int
+    rent_max: Int
+    rent_min: Int
   }
 
   type Auth {
