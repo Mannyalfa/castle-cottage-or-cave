@@ -34,22 +34,22 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    saveBook: async (parent, { body }, context) => {
+    saveHome: async (parent, { body }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { savedBooks: body } },
+          { $addToSet: { savedHomes: body } },
           { new: true }
         );
         return updatedUser;
       }
       throw new AuthenticationError("You must be logged in");
     },
-    removeBook: async (parent, { bookId }, context) => {
+    removeHome: async (parent, { homeId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedBooks: { bookId: bookId } } },
+          { $pull: { savedHomes: { homeId: homeId } } },
           { new: true }
         );
         return updatedUser;

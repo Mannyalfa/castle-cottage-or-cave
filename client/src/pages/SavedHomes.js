@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Jumbotron, Container, CardColumns, Card, Button } from "react-bootstrap";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { GET_ME } from "../utils/queries";
-import { REMOVE_BOOK } from "../utils/mutations";
-import { getMe, deleteBook } from "../utils/API";
+import { REMOVE_HOME } from "../utils/mutations";
+import { getMe, deleteHome } from "../utils/API";
 import Auth from "../utils/auth";
-import { removeBookId } from "../utils/localStorage";
-const SavedBooks = () => {
+import { removeHomeId } from "../utils/localStorage";
+const SavedHomes = () => {
   const { loading, data } = useQuery(GET_ME);
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+  const [removeHome, { error }] = useMutation(REMOVE_HOME);
   const userData = data?.me || {};
   const userDataLength = Object.keys(userData).length;
 
-  const handleDeleteBook = async (bookId) => {
+  const handleDeleteHome = async (homeId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -20,10 +20,10 @@ const SavedBooks = () => {
     }
 
     try {
-      await removeBook({ variables: { bookId: bookId } });
+      await removeHome({ variables: { homeId: homeId } });
 
 
-      removeBookId(bookId);
+      removeHomeId(homeId);
     } catch (err) {
       console.error(err);
     }
@@ -44,30 +44,30 @@ const SavedBooks = () => {
       </Jumbotron>
       <Container>
       <h2>
-          {userData.savedBooks.length
-            ? `You have ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? "home" : "homes"
+          {userData.savedHomes.length
+            ? `You have ${userData.savedHomes.length} saved ${
+                userData.savedHomes.length === 1 ? "home" : "homes"
               }:`
             : "You have no saved homes"}
         </h2>
         <CardColumns>
-          {userData.savedBooks.map((book) => {
+          {userData.savedHomes.map((home) => {
             return (
-              <Card key={book.bookId} border="dark">
-                {book.image ? (
+              <Card key={home.homeId} border="dark">
+                {home.image ? (
                   <Card.Img
-                    src={book.image}
-                    alt={`The cover for ${book.title}`}
+                    src={home.image}
+                    alt={`The cover for ${home.title}`}
                     variant="top"
                   />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className="small">Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{home.title}</Card.Title>
+                  <p className="small">Authors: {home.authors}</p>
+                  <Card.Text>{home.description}</Card.Text>
                   <Button
                     className="btn-block btn-danger"
-                    onClick={() => handleDeleteBook(book.bookId)}
+                    onClick={() => handleDeleteHome(home.homeId)}
                   >
                     Delete
                   </Button>
@@ -81,4 +81,4 @@ const SavedBooks = () => {
   );
 };
 
-export default SavedBooks;
+export default SavedHomes;

@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from "react-bootstrap";
 import Auth from "../utils/auth";
-import { saveBook, searchRentals } from "../utils/API";
-import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
+import { saveHome, searchRentals } from "../utils/API";
+import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
-import { SAVE_BOOK } from "../utils/mutations";
+import { SAVE_HOME } from "../utils/mutations";
 import { FaSearch } from 'react-icons/fa';
 
-const SearchBooks = () => {
-  const [searchedBooks, setSearchedBooks] = useState([]);
+const SearchHomes = () => {
+  const [searchedHomes, setSearchedHomes] = useState([]);
   const [city, setCity] = useState("");
   const [stateId, setStateId] = useState("");
-  const [saveBook, { error }] = useMutation(SAVE_BOOK);
-  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
+  const [saveHome, { error }] = useMutation(SAVE_HOME);
+  const [savedHomeIds, setSavedHomeIds] = useState(getSavedHomeIds());
 
   useEffect(() => {
-    return () => saveBookIds(savedBookIds);
+    return () => saveHomeIds(savedHomeIds);
   });
 
   const handleFormSubmit = async (event) => {
@@ -34,15 +34,15 @@ const SearchBooks = () => {
       console.log(data.data.results[0].description, data.data.results[0].location)
  
       const { items } = await response.json();
-      const bookData = items.map((book) => ({
-        bookId: book.id,
-        authors: book.volumeInfo.authors || ["No author to display"],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || "",
+      const homeData = items.map((home) => ({
+        homeId: home.id,
+        authors: home.volumeInfo.authors || ["No author to display"],
+        title: home.volumeInfo.title,
+        description: home.volumeInfo.description,
+        image: home.volumeInfo.imageLinks?.thumbnail || "",
       }));
 
-      setSearchedBooks(bookData);
+      setSearchedHomes(homeData);
       setCity("");
       setStateId("");
     } catch (err) {
@@ -51,8 +51,8 @@ const SearchBooks = () => {
   };
 
 
-  const handleSaveBook = async (bookId) => {
-    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+  const handleSaveHome = async (homeId) => {
+    const homeToSave = searchedHomes.find((home) => home.homeId === homeId);
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -61,11 +61,11 @@ const SearchBooks = () => {
     }
 
     try {
-      await saveBook({
-        variables: { body: bookToSave },
+      await saveHome({
+        variables: { body: homeToSave },
       });
 
-      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      setSavedHomeIds([...savedHomeIds, homeToSave.homeId]);
     } catch (err) {
       console.error(err);
     }
@@ -110,37 +110,37 @@ const SearchBooks = () => {
 
       <Container>
         <h2>
-          {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
+          {searchedHomes.length
+            ? `Viewing ${searchedHomes.length} results:`
             : "Lets search for you next home"}
         </h2>
         <CardColumns>
-          {searchedBooks.map((book) => {
+          {searchedHomes.map((home) => {
             return (
-              <Card key={book.bookId} border="dark">
-                {book.image ? (
+              <Card key={home.homeId} border="dark">
+                {home.image ? (
                   <Card.Img
-                    src={book.image}
-                    alt={`The cover for ${book.title}`}
+                    src={home.image}
+                    alt={`The cover for ${home.title}`}
                     variant="top"
                   />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className="small">Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{home.title}</Card.Title>
+                  <p className="small">Authors: {home.authors}</p>
+                  <Card.Text>{home.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      disabled={savedBookIds?.some(
-                        (savedBookId) => savedBookId === book.bookId
+                      disabled={savedHomeIds?.some(
+                        (savedHomeId) => savedHomeId === home.homeId
                       )}
                       className="btn-block btn-info"
-                      onClick={() => handleSaveBook(book.bookId)}
+                      onClick={() => handleSaveHome(home.homeId)}
                     >
-                      {savedBookIds?.some(
-                        (savedBookId) => savedBookId === book.bookId
+                      {savedHomeIds?.some(
+                        (savedHomeId) => savedHomeId === home.homeId
                       )
-                        ? "SAVED IN YOUR BOOKS"
+                        ? "SAVED IN YOUR HOMES"
                         : "SAVE"}
                     </Button>
                   )}
@@ -154,4 +154,4 @@ const SearchBooks = () => {
   );
 };
 
-export default SearchBooks;
+export default SearchHomes;
