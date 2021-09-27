@@ -7,12 +7,16 @@ export const GET_ME = gql`
       email
       username
       savedHomes {
-        homeId
-        authors
-        description
-        title
-        image
-        link
+        address
+        photo
+        bed
+        bed_max
+        bed_min
+        bath_max
+        bath_min
+        rent_max
+        rent_min
+      }
       }
     }
   }

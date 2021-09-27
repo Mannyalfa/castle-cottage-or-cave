@@ -39,19 +39,21 @@ const SearchHomes = () => {
       if (!response.ok) {
         throw new Error("something went wrong!");
       }
-      const data = await response.json();
-      console.log(
-        data.data.results[0].description,
-        data.data.results[0].location
-      );
 
-      const { items } = await response.json();
-      const homeData = items.map((home) => ({
-        homeId: home.id,
-        authors: home.volumeInfo.authors || ["No author to display"],
-        title: home.volumeInfo.title,
-        description: home.volumeInfo.description,
-        image: home.volumeInfo.imageLinks?.thumbnail || "",
+      const data = await response.json()
+      const homeResults= [ ...data.data.results];
+ 
+      const homes = homeResults.map((home) => ({
+        address: home.location.address.line,
+        photo: home.photo[0] ? home.photo[0].href :"",
+        bed: home.description.beds,
+        bed_max: home.description.beds_max,
+        bed_min: home.description.beds_min,
+        bath_max: home.description.baths_max,
+        bath_min: home.description.baths_min,
+        rent_max: home.list_price_max,
+        rent_min: home.list_price_min,
+
       }));
 
       setSearchedHomes(homeData);
