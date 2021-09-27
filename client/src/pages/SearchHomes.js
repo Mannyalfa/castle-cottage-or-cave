@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from "react-bootstrap";
+import {
+  Jumbotron,
+  Container,
+  Col,
+  Form,
+  Button,
+  Card,
+  CardColumns,
+  Row,
+} from "react-bootstrap";
 import Auth from "../utils/auth";
 import { saveHome, searchRentals } from "../utils/API";
 import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
@@ -30,6 +39,7 @@ const SearchHomes = () => {
       if (!response.ok) {
         throw new Error("something went wrong!");
       }
+
       const data = await response.json()
       const homeResults= [ ...data.data.results];
  
@@ -43,6 +53,7 @@ const SearchHomes = () => {
         bath_min: home.description.baths_min,
         rent_max: home.list_price_max,
         rent_min: home.list_price_min,
+
       }));
 
       setSearchedHomes(homeData);
@@ -78,33 +89,36 @@ const SearchHomes = () => {
     <>
       <Jumbotron fluid className="text-light bg-transparent">
         <Container>
-        <div>
-          </div>
-          
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
-              <Col xs={12} md={6}>
-                <Form.Control
-                  name="city"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  type="text"
-                  size="lg"
-                  placeholder="--Search Parameter Input--"
-                />
-                <Form.Control
-                  name="stateId"
-                  value={stateId}
-                  onChange={(e) => setStateId(e.target.value)}
-                  type="text"
-                  size="lg"
-                  placeholder="--Search Parameter Input--"
-                />
-              </Col>
-              <Col xs={12} md={2}>
-                <Button type="submit" variant="dark" size="lg">
-                  <FaSearch/>
-                </Button>
+              <Col xs={12} md={6} className="searchBar">
+                <Row>
+                  <Col xs={12} md={7} className="searchBarElement">
+                    <Form.Control
+                      name="city"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      type="text"
+                      size="lg"
+                      placeholder="City"
+                    />
+                  </Col>
+                  <Col xs={12} md={3} className="searchBarElement">
+                    <Form.Control
+                      name="stateId"
+                      value={stateId}
+                      onChange={(e) => setStateId(e.target.value)}
+                      type="text"
+                      size="lg"
+                      placeholder="State"
+                    />
+                  </Col>
+                  <Col xs={12} md={2} className="searchBarElement">
+                    <Button type="submit" variant="dark" size="lg">
+                      <FaSearch />
+                    </Button>
+                  </Col>
+                </Row>
               </Col>
             </Form.Row>
           </Form>
