@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Jumbotron, Container, CardColumns, Card, Button } from "react-bootstrap";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { GET_ME } from "../utils/queries";
 import { REMOVE_HOME } from "../utils/mutations";
-import { getMe, deleteHome } from "../utils/API";
 import Auth from "../utils/auth";
 import { removeHomeId } from "../utils/localStorage";
+
 const SavedHomes = () => {
   const { loading, data } = useQuery(GET_ME);
   const [removeHome, { error }] = useMutation(REMOVE_HOME);
   const userData = data?.me || {};
-  const userDataLength = Object.keys(userData).length;
 
   const handleDeleteHome = async (homeId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -72,6 +71,7 @@ const SavedHomes = () => {
                     Delete
                   </Button>
                 </Card.Body>
+                {error && <div>Delete failed</div>}
               </Card>
             );
           })}

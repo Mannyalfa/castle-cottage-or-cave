@@ -10,12 +10,11 @@ import {
   Row,
 } from "react-bootstrap";
 import Auth from "../utils/auth";
-import { saveHome, searchRentals } from "../utils/API";
+import { searchRentals } from "../utils/API";
 import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_HOME } from "../utils/mutations";
 import { FaSearch } from "react-icons/fa";
-import { CheckResultAndHandleErrors } from "graphql-tools";
 
 const SearchHomes = () => {
   const [searchedHomes, setSearchedHomes] = useState([]);
@@ -180,6 +179,7 @@ const SearchHomes = () => {
                     </Button>
                   )}
                 </Card.Body>
+                {error && <div>Save failed</div>}
               </Card>
             );
           })}
