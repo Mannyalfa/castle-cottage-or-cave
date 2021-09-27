@@ -25,6 +25,8 @@ const typeDefs = gql`
   input saveHomeInput {
     homeId: ID
     address: String
+    city: String
+    state: String
     photo: String
     bed: Int
     bed_max: Int
@@ -39,6 +41,8 @@ const typeDefs = gql`
   type Home {
     homeId: ID
     address: String
+    city: String
+    state: String
     photo: String
     bed: Int
     bed_max: Int

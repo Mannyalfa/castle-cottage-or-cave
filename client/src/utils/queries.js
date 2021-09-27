@@ -9,6 +9,8 @@ export const GET_ME = gql`
       savedHomes {
         homeId
         address
+        city
+        state
         photo
         bed
         bed_max

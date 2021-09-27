@@ -14,7 +14,7 @@ import { saveHome, searchRentals } from "../utils/API";
 import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_HOME } from "../utils/mutations";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 import { CheckResultAndHandleErrors } from "graphql-tools";
 
 const SearchHomes = () => {
@@ -38,13 +38,15 @@ const SearchHomes = () => {
     try {
       const response = await searchRentals(city, stateId);
 
-      const data = await response.json()
-      const items= [ ...data.data.results];
- 
+      const data = await response.json();
+      const items = [...data.data.results];
+
       const homeData = items.map((home) => ({
         homeId: home.property_id,
         address: home.location.address.line,
-        photo: home.photos[0] ? home.photos[0].href :"",
+        city: home.location.address.city,
+        state: home.location.address.state_code,
+        photo: home.photos[0] ? home.photos[0].href : "",
         bed: home.description.beds,
         bed_max: home.description.beds_max,
         bed_min: home.description.beds_min,
@@ -52,7 +54,7 @@ const SearchHomes = () => {
         bath_min: home.description.baths_min,
         rent_max: home.list_price_max,
         rent_min: home.list_price_min,
-        href: home.href
+        href: home.href,
       }));
 
       setSearchedHomes(homeData);
@@ -62,7 +64,6 @@ const SearchHomes = () => {
       console.error(err);
     }
   };
-
 
   const handleSaveHome = async (homeId) => {
     const homeToSave = searchedHomes.find((home) => home.homeId === homeId);
@@ -142,11 +143,27 @@ const SearchHomes = () => {
                   />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{home.address}</Card.Title>
-                  <p className="small">Bedrooms: {home.bed_min} to {home.bed_max}</p>
-                  <p className="small">Bathrooms: {home.bath_min} to {home.bath_max}</p>
-                  <p className="small">Rent: {home.rent_min} to {home.rent_max}</p>
-                  <Card.Text>{home.href}</Card.Text>
+                  <Card.Title>
+                    {home.address} {home.city} {home.state}
+                  </Card.Title>
+                  <p className="small">
+                    Bedrooms: {home.bed_min} to {home.bed_max}
+                  </p>
+                  <p className="small">
+                    Bathrooms: {home.bath_min} to {home.bath_max}
+                  </p>
+                  <p className="small">
+                    Rent: {home.rent_min} to {home.rent_max}
+                  </p>
+                  <Card.Text>
+                    <a
+                      href={home.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      More Info
+                    </a>
+                  </Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedHomeIds?.some(
