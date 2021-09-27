@@ -23,6 +23,7 @@ const typeDefs = gql`
   }
 
   input saveHomeInput {
+    homeId: ID
     address: String
     photo: String
     bed: Int
@@ -32,9 +33,11 @@ const typeDefs = gql`
     bath_min: Int
     rent_max: Int
     rent_min: Int
+    href: String
   }
 
   type Home {
+    homeId: ID
     address: String
     photo: String
     bed: Int
@@ -44,6 +47,7 @@ const typeDefs = gql`
     bath_min: Int
     rent_max: Int
     rent_min: Int
+    href: String
   }
 
   type Auth {

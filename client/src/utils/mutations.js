@@ -32,12 +32,17 @@ export const SAVE_HOME = gql`
       email
       homeCount
       savedHomes {
-        authors
-        description
-        image
-        link
-        title
         homeId
+        address
+        photo
+        bed
+        bed_max
+        bed_min
+        bath_max
+        bath_min
+        rent_max
+        rent_min
+        href
       }
     }
   }
@@ -51,12 +56,17 @@ export const REMOVE_HOME = gql`
       email
       homeCount
       savedHomes {
-        authors
-        description
-        image
-        link
-        title
         homeId
+        address
+        photo
+        bed
+        bed_max
+        bed_min
+        bath_max
+        bath_min
+        rent_max
+        rent_min
+        href
       }
     }
   }

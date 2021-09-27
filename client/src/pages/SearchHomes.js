@@ -15,6 +15,7 @@ import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_HOME } from "../utils/mutations";
 import { FaSearch } from 'react-icons/fa';
+import { CheckResultAndHandleErrors } from "graphql-tools";
 
 const SearchHomes = () => {
   const [searchedHomes, setSearchedHomes] = useState([]);
@@ -36,16 +37,14 @@ const SearchHomes = () => {
 
     try {
       const response = await searchRentals(city, stateId);
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
 
       const data = await response.json()
-      const homeResults= [ ...data.data.results];
+      const items= [ ...data.data.results];
  
-      const homes = homeResults.map((home) => ({
+      const homeData = items.map((home) => ({
+        homeId: home.property_id,
         address: home.location.address.line,
-        photo: home.photo[0] ? home.photo[0].href :"",
+        photo: home.photos[0] ? home.photos[0].href :"",
         bed: home.description.beds,
         bed_max: home.description.beds_max,
         bed_min: home.description.beds_min,
@@ -53,7 +52,7 @@ const SearchHomes = () => {
         bath_min: home.description.baths_min,
         rent_max: home.list_price_max,
         rent_min: home.list_price_min,
-
+        href: home.href
       }));
 
       setSearchedHomes(homeData);
@@ -129,23 +128,25 @@ const SearchHomes = () => {
         <h2>
           {searchedHomes.length
             ? `Viewing ${searchedHomes.length} results:`
-            : "Lets search for you next home"}
+            : "Lets search for your next home"}
         </h2>
         <CardColumns>
           {searchedHomes.map((home) => {
             return (
               <Card key={home.homeId} border="dark">
-                {home.image ? (
+                {home.photo ? (
                   <Card.Img
-                    src={home.image}
-                    alt={`The cover for ${home.title}`}
+                    src={home.photo}
+                    alt={`The photo for ${home.address}`}
                     variant="top"
                   />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{home.title}</Card.Title>
-                  <p className="small">Authors: {home.authors}</p>
-                  <Card.Text>{home.description}</Card.Text>
+                  <Card.Title>{home.address}</Card.Title>
+                  <p className="small">Bedrooms: {home.bed_min} to {home.bed_max}</p>
+                  <p className="small">Bathrooms: {home.bath_min} to {home.bath_max}</p>
+                  <p className="small">Rent: {home.rent_min} to {home.rent_max}</p>
+                  <Card.Text>{home.href}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedHomeIds?.some(

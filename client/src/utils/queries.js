@@ -7,6 +7,7 @@ export const GET_ME = gql`
       email
       username
       savedHomes {
+        homeId
         address
         photo
         bed
@@ -16,7 +17,7 @@ export const GET_ME = gql`
         bath_min
         rent_max
         rent_min
-      }
+        href
       }
     }
   }
