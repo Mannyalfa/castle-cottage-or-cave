@@ -36,13 +36,12 @@ const SavedHomes = () => {
     <>
       <Jumbotron fluid className="text-light bg-transparent">
         <Container>
-        <div id="listing">
-          </div>
+          <div> id="listing" </div>
           <h1>Your saved listings</h1>
         </Container>
       </Jumbotron>
       <Container>
-      <h2>
+        <h2>
           {userData.savedHomes.length
             ? `You have ${userData.savedHomes.length} saved ${
                 userData.savedHomes.length === 1 ? "home" : "homes"
@@ -53,17 +52,35 @@ const SavedHomes = () => {
           {userData.savedHomes.map((home) => {
             return (
               <Card key={home.homeId} border="dark">
-                {home.image ? (
+                {home.photo ? (
                   <Card.Img
-                    src={home.image}
-                    alt={`The cover for ${home.title}`}
+                    src={home.photo}
+                    alt={`The photo for ${home.address}`}
                     variant="top"
                   />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{home.title}</Card.Title>
-                  <p className="small">Authors: {home.authors}</p>
-                  <Card.Text>{home.description}</Card.Text>
+                  <Card.Title>
+                    {home.address} {home.city} {home.state}
+                  </Card.Title>
+                  <p className="small">
+                    Bedrooms: {home.bed_min} to {home.bed_max}
+                  </p>
+                  <p className="small">
+                    Bathrooms: {home.bath_min} to {home.bath_max}
+                  </p>
+                  <p className="small">
+                    Rent: {home.rent_min} to {home.rent_max}
+                  </p>
+                  <Card.Text>
+                    <a
+                      href={home.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      More Info
+                    </a>
+                  </Card.Text>
                   <Button
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteHome(home.homeId)}
