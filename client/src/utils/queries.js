@@ -15,8 +15,10 @@ export const GET_ME = gql`
         bed
         bed_max
         bed_min
+        bath
         bath_max
         bath_min
+        rent
         rent_max
         rent_min
         href
