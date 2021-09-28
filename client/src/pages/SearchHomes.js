@@ -107,7 +107,7 @@ const SearchHomes = () => {
                       onChange={(e) => setCity(e.target.value)}
                       type="text"
                       size="lg"
-                      placeholder="City"
+                      placeholder="Enter a City"
                     />
                   </Col>
                   <Col xs={12} md={3} className="searchBarElement">
@@ -147,12 +147,9 @@ const SearchHomes = () => {
                       onChange={(e) => setRentMax(e.target.value)}
                       type="text"
                       size="lg"
-                      placeholder="$Max Rent"
+                      placeholder="$ Max Rent"
                     />
                     </Col>
-
-
-
                   <Col xs={12} md={2} className="searchBarElement">
                     <Button type="submit" variant="dark" size="lg">
                       <FaSearch />
@@ -220,7 +217,7 @@ const SearchHomes = () => {
                     </Button>
                   )}
                 </Card.Body>
-                {error && <div>Save failed</div>}
+                {error && <div id="fail"><strong>SAVE FAILED</strong></div>}
               </Card>
             );
           })}

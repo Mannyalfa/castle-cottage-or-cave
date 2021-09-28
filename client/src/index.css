@@ -39,6 +39,10 @@ h2 {
   margin-left: 12%;
 }
 
+#fail {
+  color: red;
+}
+
 /* media queries for desktop screens and smaller */
 @media screen and (max-width: 980px) {
   #tagline {
