@@ -15,8 +15,11 @@
  
   [Credits](#credits)
 
+  [Contact](#contact)
+
+
 ## Description
-This MERN-stack application searches for rental listns by city, state, number of bed and bathrooms as well as max rent price using the US Real Estate API.  After signing up, users can Sign Up search for rental listings and save them for later retrieval once.
+This MERN-stack application that searches for rental lists by city, state, number of bedrooms and bathrooms as well as max rent price using the US Real Estate API.  After signing up, users can Sign Up search for rental listings and save them for later retrieval.
 
 User Story:
 
@@ -90,6 +93,19 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Image
+Search Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+
+Login/Sign Up Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+
+Search-Results
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+
+Saved Homes
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+
+Responsive Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
 
 ## Languages/Applications
@@ -111,4 +127,13 @@ https://github.com/Mannyalfa/castle-cottage-or-cave
 https://damp-inlet-70422.herokuapp.com/
 
 ## Credits
-This application was designed and developed by Jenn Menjivar, Chris Koberstine and Manny Alfaro
+This application was designed and developed by Jenn Menjivar, Chris Koberstine and Manny Alfaro to satisfy requirements for Group Project 3, University of Central Florida Coding Boot Camp: UCF-VIRT-BO-FSF-PT-04-2021-U-B-TTH
+
+## Contact
+
+Chris Koberstine: koberstine@hotmail.com
+
+Manny Alfaro: mannyalfa@gmail.com
+
+Jenn Menjivar: jennifer.menjivar18@gmail.com
+
