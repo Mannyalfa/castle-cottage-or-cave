@@ -58,6 +58,7 @@ const SearchHomes = () => {
         rent: home.list_price,
         rent_max: home.list_price_max,
         rent_min: home.list_price_min,
+        pet_policy: home.pet_policy.text,
         href: home.href,
       }));
 
@@ -281,6 +282,9 @@ const SearchHomes = () => {
                     {home.rent
                       ? `${home.rent}`
                       : `${home.rent_min} to ${home.rent_max}`}
+                  </p>
+                  <p>
+                    {home.pet_policy ? `Pet Policy: ${home.pet_policy}` : ""}
                   </p>
                   <Card.Text>
                     <a

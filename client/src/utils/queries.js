@@ -21,6 +21,7 @@ export const GET_ME = gql`
         rent
         rent_max
         rent_min
+        pet_policy
         href
       }
     }

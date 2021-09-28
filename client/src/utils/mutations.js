@@ -46,6 +46,7 @@ export const SAVE_HOME = gql`
         rent
         rent_max
         rent_min
+        pet_policy
         href
       }
     }
@@ -74,6 +75,7 @@ export const REMOVE_HOME = gql`
         rent
         rent_max
         rent_min
+        pet_policy
         href
       }
     }
