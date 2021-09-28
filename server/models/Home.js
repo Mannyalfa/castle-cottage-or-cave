@@ -2,29 +2,78 @@ const { Schema } = require('mongoose');
 
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedHomes` array in User.js
 const homeSchema = new Schema({
-  authors: [
+  homeId: [
     {
-      type: String,
+      type: ID,
     },
   ],
-  description: {
+  address: [
+    {
     type: String,
-    required: true,
-  },
-  // saved home id from GoogleHomes
-  homeId: {
+    },
+  ],
+  city: [
+    {
     type: String,
-    required: true,
-  },
-  image: {
+    },
+  ],
+  state: [
+    {
     type: String,
-  },
-  link: {
+    },
+  ],
+  photo: [
+    {
     type: String,
-  },
-  title: {
+    },
+  ],
+  bed: [
+    {
+    type: Int,
+    },
+  ],
+  bed_max: [
+    {
+    type: Int,
+    },
+  ],
+  bed_min: [
+    {
+    type: Int,
+    },
+  ],
+  bath: [
+    {
+    type: Int,
+    },
+  ],
+  bath_max: [
+    {
+    type: Int,
+    },
+  ],
+  bath_min: [
+    {
+    type: Int,
+    },
+  ],
+  rent: [
+    {
+    type: Int,
+    },
+  ],
+  rent_max: [
+    {
+    type: Int,
+    },
+  ],
+  rent_min: [
+    {
+    type: Int,
+    },
+  ],
+  href: {
     type: String,
-    required: true,
   },
 });
 
