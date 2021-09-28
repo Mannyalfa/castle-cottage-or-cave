@@ -38,7 +38,7 @@ const SearchHomes = () => {
     }
 
     try {
-      const response = await searchRentals(city, stateId);
+      const response = await searchRentals(city, stateId, bed, bath, rent_max);
 
       const data = await response.json();
       const items = [...data.data.results];
@@ -184,13 +184,13 @@ const SearchHomes = () => {
                     {home.address} {home.city} {home.state}
                   </Card.Title>
                   <p className="small">
-                    Bedrooms: {home.bed_min} to {home.bed_max}
+                    Bedrooms: {home.bed ? `${home.bed}` : `${home.bed_min} to ${home.bed_max}`}
                   </p>
                   <p className="small">
-                    Bathrooms: {home.bath_min} to {home.bath_max}
+                    Bathrooms: {home.bath ? `${home.bath}` : `${home.bath_min} to ${home.bath_max}`}
                   </p>
                   <p className="small">
-                    Rent: {home.rent_min} to {home.rent_max}
+                    Rent: {home.rent ? `${home.rent}` : `${home.rent_min} to ${home.rent_max}`}
                   </p>
                   <Card.Text>
                     <a
