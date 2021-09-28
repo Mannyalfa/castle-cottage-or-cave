@@ -40,8 +40,10 @@ export const SAVE_HOME = gql`
         bed
         bed_max
         bed_min
+        bath
         bath_max
         bath_min
+        rent
         rent_max
         rent_min
         href
@@ -66,8 +68,10 @@ export const REMOVE_HOME = gql`
         bed
         bed_max
         bed_min
+        bath
         bath_max
         bath_min
+        rent
         rent_max
         rent_min
         href

@@ -10,12 +10,11 @@ import {
   Row,
 } from "react-bootstrap";
 import Auth from "../utils/auth";
-import { saveHome, searchRentals } from "../utils/API";
+import { searchRentals } from "../utils/API";
 import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_HOME } from "../utils/mutations";
 import { FaSearch } from "react-icons/fa";
-import { CheckResultAndHandleErrors } from "graphql-tools";
 
 const SearchHomes = () => {
   const [searchedHomes, setSearchedHomes] = useState([]);
@@ -50,8 +49,10 @@ const SearchHomes = () => {
         bed: home.description.beds,
         bed_max: home.description.beds_max,
         bed_min: home.description.beds_min,
+        bath: home.description.baths,
         bath_max: home.description.baths_max,
         bath_min: home.description.baths_min,
+        rent: home.list_price,
         rent_max: home.list_price_max,
         rent_min: home.list_price_min,
         href: home.href,
@@ -180,6 +181,7 @@ const SearchHomes = () => {
                     </Button>
                   )}
                 </Card.Body>
+                {error && <div>Save failed</div>}
               </Card>
             );
           })}

@@ -31,8 +31,10 @@ const typeDefs = gql`
     bed: Int
     bed_max: Int
     bed_min: Int
+    bath: Int
     bath_max: Int
     bath_min: Int
+    rent: Int
     rent_max: Int
     rent_min: Int
     href: String
@@ -47,8 +49,10 @@ const typeDefs = gql`
     bed: Int
     bed_max: Int
     bed_min: Int
+    bath: Int
     bath_max: Int
     bath_min: Int
+    rent: Int
     rent_max: Int
     rent_min: Int
     href: String
