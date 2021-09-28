@@ -20,6 +20,9 @@ const SearchHomes = () => {
   const [searchedHomes, setSearchedHomes] = useState([]);
   const [city, setCity] = useState("");
   const [stateId, setStateId] = useState("");
+  const [bed, setBed] = useState("");
+  const [bath, setBath] = useState("");
+  const [rent_max, setRentMax] = useState("");
   const [saveHome, { error }] = useMutation(SAVE_HOME);
   const [savedHomeIds, setSavedHomeIds] = useState(getSavedHomeIds());
 
@@ -61,6 +64,9 @@ const SearchHomes = () => {
       setSearchedHomes(homeData);
       setCity("");
       setStateId("");
+      setBed("");
+      setBath("");
+      setRentMax("");
     } catch (err) {
       console.error(err);
     }
@@ -109,11 +115,44 @@ const SearchHomes = () => {
                       name="stateId"
                       value={stateId}
                       onChange={(e) => setStateId(e.target.value)}
-                      type="text"
+                      type="text" 
                       size="lg"
                       placeholder="State"
                     />
                   </Col>
+                  <Col xs={12} md={3} className="searchBarElement">
+                    <Form.Control
+                      name="bed"
+                      value={bed}
+                      onChange={(e) => setBed(e.target.value)}
+                      type="text" pattern="[0-9]*"
+                      size="lg"
+                      placeholder="# Bed"
+                    />
+                  </Col>
+                  <Col xs={12} md={3} className="searchBarElement">
+                    <Form.Control
+                      name="bath"
+                      value={bath}
+                      onChange={(e) => setBath(e.target.value)}
+                      type="text" pattern="[0-9]*"
+                      size="lg"
+                      placeholder="# Bath"
+                    />
+                    </Col>
+                    <Col xs={12} md={3} className="searchBarElement">
+                    <Form.Control
+                      name="rent_max" pattern="[0-9]*"
+                      value={rent_max}
+                      onChange={(e) => setRentMax(e.target.value)}
+                      type="text"
+                      size="lg"
+                      placeholder="$Max Rent"
+                    />
+                    </Col>
+
+
+
                   <Col xs={12} md={2} className="searchBarElement">
                     <Button type="submit" variant="dark" size="lg">
                       <FaSearch />
