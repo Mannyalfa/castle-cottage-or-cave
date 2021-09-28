@@ -36,7 +36,7 @@ const SavedHomes = () => {
     <>
       <Jumbotron fluid className="text-light bg-transparent">
         <Container>
-          <div> id="listing" </div>
+          <div id="listing" ></div>
           <h1>Your saved listings</h1>
         </Container>
       </Jumbotron>
