@@ -98,9 +98,9 @@ const SearchHomes = () => {
         <Container>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
-              <Col xs={12} md={6} className="searchBar">
+              <Col xs={10} md={12} lg={12} className="searchBar">
                 <Row>
-                  <Col xs={12} md={7} className="searchBarElement">
+                  <Col xs={8} md={3} lg={5} className="searchBarElement">
                     <Form.Control
                       name="city"
                       value={city}
@@ -110,47 +110,50 @@ const SearchHomes = () => {
                       placeholder="Enter a City"
                     />
                   </Col>
-                  <Col xs={12} md={3} className="searchBarElement">
+                  <Col xs={4} md={2} lg={2} className="searchBarElement">
                     <Form.Control
                       name="stateId"
                       value={stateId}
                       onChange={(e) => setStateId(e.target.value)}
-                      type="text" 
+                      type="text"
                       size="lg"
                       placeholder="State"
                     />
                   </Col>
-                  <Col xs={12} md={3} className="searchBarElement">
+                  <Col xs={3} md={2} lg={1} className="searchBarElement">
                     <Form.Control
                       name="bed"
                       value={bed}
                       onChange={(e) => setBed(e.target.value)}
-                      type="text" pattern="[0-9]*"
+                      type="text"
+                      pattern="[0-9]*"
                       size="lg"
-                      placeholder="# Bed"
+                      placeholder="Beds"
                     />
                   </Col>
-                  <Col xs={12} md={3} className="searchBarElement">
+                  <Col xs={3} md={2} lg={1} className="searchBarElement">
                     <Form.Control
                       name="bath"
                       value={bath}
                       onChange={(e) => setBath(e.target.value)}
-                      type="text" pattern="[0-9]*"
+                      type="text"
+                      pattern="[0-9]*"
                       size="lg"
-                      placeholder="# Bath"
+                      placeholder="Baths"
                     />
-                    </Col>
-                    <Col xs={12} md={3} className="searchBarElement">
+                  </Col>
+                  <Col xs={4} md={2} lg={2} className="searchBarElement">
                     <Form.Control
-                      name="rent_max" pattern="[0-9]*"
+                      name="rent_max"
+                      pattern="[0-9]*"
                       value={rent_max}
                       onChange={(e) => setRentMax(e.target.value)}
                       type="text"
                       size="lg"
-                      placeholder="$ Max Rent"
+                      placeholder="Max Rent"
                     />
-                    </Col>
-                  <Col xs={12} md={2} className="searchBarElement">
+                  </Col>
+                  <Col xs={1} className="searchBarElement">
                     <Button type="submit" variant="dark" size="lg">
                       <FaSearch />
                     </Button>
@@ -184,13 +187,22 @@ const SearchHomes = () => {
                     {home.address} {home.city} {home.state}
                   </Card.Title>
                   <p className="small">
-                    Bedrooms: {home.bed ? `${home.bed}` : `${home.bed_min} to ${home.bed_max}`}
+                    Bedrooms:{" "}
+                    {home.bed
+                      ? `${home.bed}`
+                      : `${home.bed_min} to ${home.bed_max}`}
                   </p>
                   <p className="small">
-                    Bathrooms: {home.bath ? `${home.bath}` : `${home.bath_min} to ${home.bath_max}`}
+                    Bathrooms:{" "}
+                    {home.bath
+                      ? `${home.bath}`
+                      : `${home.bath_min} to ${home.bath_max}`}
                   </p>
                   <p className="small">
-                    Rent: {home.rent ? `${home.rent}` : `${home.rent_min} to ${home.rent_max}`}
+                    Rent:{" "}
+                    {home.rent
+                      ? `${home.rent}`
+                      : `${home.rent_min} to ${home.rent_max}`}
                   </p>
                   <Card.Text>
                     <a
@@ -217,7 +229,11 @@ const SearchHomes = () => {
                     </Button>
                   )}
                 </Card.Body>
-                {error && <div id="fail"><strong>SAVE FAILED</strong></div>}
+                {error && (
+                  <div id="fail">
+                    <strong>SAVE FAILED</strong>
+                  </div>
+                )}
               </Card>
             );
           })}
