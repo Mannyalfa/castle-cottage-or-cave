@@ -89,6 +89,7 @@ const SearchHomes = () => {
 
       setSavedHomeIds([...savedHomeIds, homeToSave.homeId]);
     } catch (err) {
+      saveRecord(homeToSave.homeId);
       console.error(err);
     }
   };
