@@ -15,6 +15,7 @@ import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_HOME } from "../utils/mutations";
 import { FaSearch } from "react-icons/fa";
+import { saveRecord } from "../utils/idb"
 
 const SearchHomes = () => {
   const [searchedHomes, setSearchedHomes] = useState([]);
