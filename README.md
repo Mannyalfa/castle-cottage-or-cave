@@ -4,11 +4,11 @@
   [Description](#description)
  
   [License](#license)
- 
-  [Image](#Image)
- 
+  
   [Languages/Applications](#languages-applications)
  
+  [Images](#Images)
+  
   [Repository URL](#repository-url)
  
   [Deployed URL](#deployed-url)
@@ -92,7 +92,19 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Image
+## Languages/Applications
+
+    MongoDB
+    Express
+    React
+    Node
+    Apollo Server 
+    React Router
+    GraphQL
+    Mongo-Atlas
+    Heroku
+
+## Images
 Landing Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/landing-page.jpg)
 
@@ -110,15 +122,6 @@ Saved Homes
 Responsive Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/responsive-page.jpg)
 
-## Languages/Applications
-
-    MongoDB
-    Express
-    React
-    Node
-    Apollo Server 
-    React Router
-    GraphQL
 
 ## Repository 
 
