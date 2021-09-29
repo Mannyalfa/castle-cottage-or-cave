@@ -15,7 +15,6 @@ import { saveHomeIds, getSavedHomeIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/react-hooks";
 import { SAVE_HOME } from "../utils/mutations";
 import { FaSearch } from "react-icons/fa";
-import { saveRecord } from "../utils/idb"
 
 const SearchHomes = () => {
   const [searchedHomes, setSearchedHomes] = useState([]);
@@ -75,6 +74,7 @@ const SearchHomes = () => {
   };
 
   const handleSaveHome = async (homeId) => {
+
     const homeToSave = searchedHomes.find((home) => home.homeId === homeId);
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -90,7 +90,7 @@ const SearchHomes = () => {
 
       setSavedHomeIds([...savedHomeIds, homeToSave.homeId]);
     } catch (err) {
-      saveRecord(homeToSave.homeId);
+ //     saveRecord(homeToSave.homeId);
       console.error(err);
     }
   };
