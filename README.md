@@ -93,20 +93,22 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Image
+Landing Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/landing-page.jpg)
+
 Search Page
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/search-page.jpg)
 
 Login/Sign Up Page
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/loging-signup.jpg)
 
-Search-Results
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+
 
 Saved Homes
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/saved-items.jpg)
 
 Responsive Page
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/responsive-page.jpg)
 
 ## Languages/Applications
 
