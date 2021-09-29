@@ -4,11 +4,11 @@
   [Description](#description)
  
   [License](#license)
- 
-  [Image](#Image)
- 
+  
   [Languages/Applications](#languages-applications)
  
+  [Images](#Images)
+  
   [Repository URL](#repository-url)
  
   [Deployed URL](#deployed-url)
@@ -92,22 +92,6 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Image
-Search Page
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
-
-Login/Sign Up Page
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
-
-Search-Results
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
-
-Saved Homes
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
-
-Responsive Page
-![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/src/images/coming-soon.jpg)
-
 ## Languages/Applications
 
     MongoDB
@@ -117,6 +101,27 @@ Responsive Page
     Apollo Server 
     React Router
     GraphQL
+    Mongo-Atlas
+    Heroku
+
+## Images
+Landing Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/landing-page.jpg)
+
+Search Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/search-page.jpg)
+
+Login/Sign Up Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/loging-signup.jpg)
+
+
+
+Saved Homes
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/saved-items.jpg)
+
+Responsive Page
+![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/responsive-page.jpg)
+
 
 ## Repository 
 
