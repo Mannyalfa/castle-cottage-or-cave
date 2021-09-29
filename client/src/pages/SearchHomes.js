@@ -69,6 +69,7 @@ const SearchHomes = () => {
       setBath("");
       setRentMax("");
     } catch (err) {
+      saveRecord(formData);
       console.error(err);
     }
   };
