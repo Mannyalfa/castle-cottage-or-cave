@@ -1,25 +1,26 @@
 # Castle, Cottage or Cave
 
 ## Table of Contents
-  [Description](#description)
- 
-  [License](#license)
-  
-  [Languages/Applications](#languages-applications)
- 
-  [Images](#Images)
-  
-  [Repository URL](#repository-url)
- 
-  [Deployed URL](#deployed-url)
- 
-  [Credits](#credits)
 
-  [Contact](#contact)
+[Description](#description)
 
+[License](#license)
+
+[Languages/Applications](#languages-applications)
+
+[Images](#Images)
+
+[Repository URL](#repository-url)
+
+[Deployed URL](#deployed-url)
+
+[Credits](#credits)
+
+[Contact](#contact)
 
 ## Description
-This MERN-stack application that searches for rental lists by city, state, number of bedrooms and bathrooms as well as max rent price using the US Real Estate API.  After signing up, users can Sign Up search for rental listings and save them for later retrieval.
+
+This MERN-stack application that searches for rental lists by city, state, number of bedrooms and bathrooms as well as max rent price using the US Real Estate API. After signing up, users can Sign Up search for rental listings and save them for later retrieval.
 
 User Story:
 
@@ -47,7 +48,7 @@ THEN a modal appears on the screen with a toggle between the option to log in or
 
 WHEN the toggle is set to Sign Up
 
-THEN I am presented with three inputs for a username, an email address, and a password, and a 
+THEN I am presented with three inputs for a username, an email address, and a password, and a
 Sign Up button
 
 WHEN the toggle is set to Login
@@ -84,9 +85,7 @@ THEN that listing is deleted from my saved homes list
 
 WHEN I click on the Logout button
 
-THEN I am logged out of the site and presented with a menu with the options Search for Homes and Login/Sign Up and input fields to search for homes and a submit button  
-
-
+THEN I am logged out of the site and presented with a menu with the options Search for Homes and Login/Sign Up and input fields to search for homes and a submit button
 
 ## License
 
@@ -98,13 +97,14 @@ THEN I am logged out of the site and presented with a menu with the options Sear
     Express
     React
     Node
-    Apollo Server 
+    Apollo Server
     React Router
     GraphQL
     Mongo-Atlas
     Heroku
 
 ## Images
+
 Landing Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/landing-page.jpg)
 
@@ -114,16 +114,13 @@ Search Page
 Login/Sign Up Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/loging-signup.jpg)
 
-
-
 Saved Homes
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/saved-items.jpg)
 
 Responsive Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/responsive-page.jpg)
 
-
-## Repository 
+## Repository
 
 https://github.com/Mannyalfa/castle-cottage-or-cave
 
@@ -132,6 +129,7 @@ https://github.com/Mannyalfa/castle-cottage-or-cave
 https://damp-inlet-70422.herokuapp.com/
 
 ## Credits
+
 This application was designed and developed by Jenn Menjivar, Chris Koberstine and Manny Alfaro to satisfy requirements for Group Project 3, University of Central Florida Coding Boot Camp: UCF-VIRT-BO-FSF-PT-04-2021-U-B-TTH
 
 ## Contact
@@ -141,4 +139,3 @@ Chris Koberstine: koberstine@hotmail.com
 Manny Alfaro: mannyalfa@gmail.com
 
 Jenn Menjivar: jennifer.menjivar18@gmail.com
-
