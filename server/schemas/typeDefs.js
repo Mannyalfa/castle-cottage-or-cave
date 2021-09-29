@@ -37,7 +37,6 @@ const typeDefs = gql`
     rent: Int
     rent_max: Int
     rent_min: Int
-    pet_policy: String
     href: String
   }
 
@@ -56,7 +55,6 @@ const typeDefs = gql`
     rent: Int
     rent_max: Int
     rent_min: Int
-    pet_policy: String
     href: String
   }
 

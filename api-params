@@ -1,8 +1,0 @@
-
-https://us-real-estate.p.rapidapi.com/for-rent?city=Detroit&state_code=MI&rapidapi-key=a0097f7badmshb6eb43a4503cfd7p13d33cjsna3cca363e781
-
-
-data.results[0].list_price_min
-data.results[0].description.beds
-data.results[0].location.address.street_number
-data.results[0].pet_policy.dogs

@@ -44,9 +44,6 @@ const homeSchema = new Schema({
   rent_min: {
     type: Number,
   },
-  pet_policy: {
-    type: String,
-  },
   href: {
     type: String,
   },
