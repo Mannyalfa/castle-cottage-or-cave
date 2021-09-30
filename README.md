@@ -6,13 +6,13 @@
 
 [License](#license)
 
-[Languages/Applications](#languages-applications)
+[Languages and Applications](#languages-and-applications)
 
 [Images](#images)
 
 [Demo Powerpoint Presentation](#demo-powerpoint-presentation)
 
-[Demo/Walkthrough](#demo-walkthrough)
+[Walkthrough Demo](#walkthrough-demo)
 
 [Repository URL](#repository-url)
 
@@ -93,7 +93,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Languages/Applications
+## Languages and Applications
     MongoDB
     Express
     React
@@ -123,7 +123,7 @@ Responsive Page
 ## Demo Powerpoint Presentation
 https://docs.google.com/presentation/d/1ZpnxDsAMdndfAzMRVzEk_zWod_0gIOeI/edit?usp=sharing&ouid=106781516830665347924&rtpof=true&sd=true
 
-## Demo/Walkthrough
+## Walkthrough Demo
 https://drive.google.com/file/d/1eHt8ptfzmKujpYMs1ZRl7RYsQfwTSOzF/view?usp=sharing
 
 ## Repository
