@@ -23,7 +23,7 @@
 [Contact](#contact)
 
 ## Description
-This MERN-stack application that searches for rental lists by city, state, number of bedrooms and bathrooms as well as max rent price using the US Real Estate API. After signing up, users can Sign Up search for rental listings and save them for later retrieval.
+This MERN-stack application searches for rental lists by city, state, number of bedrooms and bathrooms as well as max rent price using the US Real Estate API. After signing up, users can Sign Up search for rental listings and save them for later retrieval.
 
 User Story:
 
