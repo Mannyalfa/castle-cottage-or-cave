@@ -10,9 +10,9 @@
 
 [Images](#images)
 
-[Demo Powerpoint Presentation](demo-powerpoint-presentation)
+[Demo Powerpoint Presentation](#demo-powerpoint-presentation)
 
-[Demo/Walkthrough](demo-walkthrough)
+[Demo/Walkthrough](#demo-walkthrough)
 
 [Repository URL](#repository-url)
 
