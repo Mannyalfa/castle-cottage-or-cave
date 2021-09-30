@@ -8,7 +8,11 @@
 
 [Languages/Applications](#languages-applications)
 
-[Images](#Images)
+[Images](#images)
+
+[Demo Powerpoint Presentation](demo-powerpoint-presentation)
+
+[Demo/Walkthrough](demo-walkthrough)
 
 [Repository URL](#repository-url)
 
@@ -19,7 +23,6 @@
 [Contact](#contact)
 
 ## Description
-
 This MERN-stack application that searches for rental lists by city, state, number of bedrooms and bathrooms as well as max rent price using the US Real Estate API. After signing up, users can Sign Up search for rental listings and save them for later retrieval.
 
 User Story:
@@ -88,11 +91,9 @@ WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for Homes and Login/Sign Up and input fields to search for homes and a submit button
 
 ## License
-
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Languages/Applications
-
     MongoDB
     Express
     React
@@ -104,7 +105,6 @@ THEN I am logged out of the site and presented with a menu with the options Sear
     Heroku
 
 ## Images
-
 Landing Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/landing-page.jpg)
 
@@ -120,20 +120,22 @@ Saved Homes
 Responsive Page
 ![screenshot](https://github.com/Mannyalfa/castle-cottage-or-cave/blob/main/client/src/images/responsive-page.jpg)
 
-## Repository
+## Demo Powerpoint Presentation
+https://docs.google.com/presentation/d/1ZpnxDsAMdndfAzMRVzEk_zWod_0gIOeI/edit?usp=sharing&ouid=106781516830665347924&rtpof=true&sd=true
 
+## Demo/Walkthrough
+https://drive.google.com/file/d/1eHt8ptfzmKujpYMs1ZRl7RYsQfwTSOzF/view?usp=sharing
+
+## Repository
 https://github.com/Mannyalfa/castle-cottage-or-cave
 
 ## Deployed URL
-
 https://damp-inlet-70422.herokuapp.com/
 
 ## Credits
-
 This application was designed and developed by Jenn Menjivar, Chris Koberstine and Manny Alfaro to satisfy requirements for Group Project 3, University of Central Florida Coding Boot Camp: UCF-VIRT-BO-FSF-PT-04-2021-U-B-TTH
 
 ## Contact
-
 Chris Koberstine: koberstine@hotmail.com
 
 Manny Alfaro: mannyalfa@gmail.com
